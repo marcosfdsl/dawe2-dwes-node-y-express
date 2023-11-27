@@ -2,23 +2,46 @@
 <div class="flex flex-col justify-center w-screen h-screen fondos fondo3">
 
     <div class="flex justify-center items-center w-full h-full z-10">
-        <div class="flex flex-col lg:flex-row h-1/2 justify-between lg:justify-evenly lg:w-4/6 items-center">
+        <div class="grid grid-cols-3 justify-center items-center mb-8">
 
-            <button id="btnhosteleria"
-                class="flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col bg-black hoververde rounded-full">
-                <img src="../assets/fotos/simbolos/hosteleria.png" class="w-1/3 agrandar" alt="">
-            </button>
+            <!-- Primera fila -->
+            <div class="invisible"></div>
+            <div
+                class="bg-white rotar flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col">
+                <button id="btnmusica"
+                    class="bg-black hoveramarillo flex items-center justify-center h-full margenrombotop">
+                    <img src="../assets/fotos/simbolos/musica.png" class="desrotar w-1/3 agrandar" alt="">
+                </button>
+            </div>
+            <div class="invisible"></div>
 
-            <button id="btnmusica"
-                class="flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col bg-black hoververde rounded-full">
-                <img src="../assets/fotos/simbolos/musica.png" class="w-1/3 agrandar" alt="">
-            </button>
+            <!-- Segunda fila -->
+            <div
+                class="bg-white rotar flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col">
+                <button id="btnhosteleria"
+                    class="bg-black hoveramarillo flex items-center justify-center h-full margenromboleft">
+                    <img src="../assets/fotos/simbolos/hosteleria.png" class="desrotar w-1/3 agrandar" alt="">
+                </button>
+            </div>
+            <div class="invisible"></div>
+            <div
+                class="bg-white rotar flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col">
+                <button id="btngenealogia"
+                    class="bg-black hoveramarillo flex items-center justify-center h-full margenromboright">
+                    <img src="../assets/fotos/simbolos/genealogia.png" class="desrotar w-1/3 agrandar" alt="">
+                </button>
+            </div>
 
-            <button id="btngenealogia"
-                class="flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col bg-black hoververde rounded-full">
-                <img src="../assets/fotos/simbolos/genealogia.png" class="w-1/3 agrandar" alt="">
-            </button>
-
+            <!-- Tercera fila -->
+            <div class="invisible"></div>
+            <div
+                class="bg-white rotar flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col hover:bg-gray-300">
+                <button id="btndesarrollo"
+                    class="bg-black hoveramarillo flex items-center justify-center h-full margenrombobot">
+                    <img src="../assets/fotos/simbolos/desarrollo.png" class="desrotar w-1/3 agrandar" alt="">
+                </button>
+            </div>
+            <div class="invisible"></div>
         </div>
     </div>
 
@@ -32,7 +55,7 @@
                     <header class="flex flex-col items-center pt-8 px-4">
                         <img src="../assets/fotos/flornegra.png" alt="Logo Sofos flor negra"
                             class="justify-center w-28 h-28 mb-6 object-cover agrandar3">
-                        <div class="w-full p-4 lg:px-44 rounded fondoverde">
+                        <div class="w-full p-4 lg:px-44 rounded fondoamarillo">
                             <h1 class="mb-4 text-xl lg:text-2xl font-bold">Sofos</h1>
                             <p class="mb-4 text-sm lg:text-base">
                                 Sofos es el nombre de mi faceta artística, un proyecto musical que cuenta con
@@ -56,7 +79,7 @@
                         <!-- Escuchar -->
                         <section>
                             <h2 class="text-xl lg:text-2xl font-bold mb-8">ESCUCHAR</h2>
-                            <div class="flex justify-evenly items-center mb-8 px-4 py-8 lg:px-60 fondoverde rounded">
+                            <div class="flex justify-evenly items-center mb-8 px-4 py-8 lg:px-60 fondoamarillo rounded">
                                 <a href="https://open.spotify.com/intl-es/artist/5d3mZTupUjrU9lRPeedTpj?si=rsfLD7D2QrqH76uh8DlWjg"
                                     class="fa-brands fa-spotify text-4xl azul agrandar3"></a>
                                 <a href="https://youtube.com/@sofosbars"
@@ -210,7 +233,7 @@
                         <!-- Alias -->
                         <section>
                             <h2 class="text-xl lg:text-2xl font-bold mb-8">ALIAS</h2>
-                            <div class="mb-8 p-4 lg:px-44 fondoverde rounded">
+                            <div class="mb-8 p-4 lg:px-44 fondoamarillo rounded">
                                 <p class="text-sm lg:text-base">Comencé a utilizar el alias de Sofos a partir de
                                     2019, que nació a raíz de mi interés por la filosofía griega. Aunque fue una
                                     transición progresiva, se podría decir que mi última canción como Mark fue
@@ -233,12 +256,12 @@
                                 <h3 class="letra lg:text-lg font-bold mb-4">En solitario</h3>
 
                                 <div id="main" class="letra2 grid grid-cols-4 justify-evenly">
-                                    <div class="col-span-2 flex flex-col justify-center h-8 fondoverde font-bold">
+                                    <div class="col-span-2 flex flex-col justify-center h-8 fondoamarillo font-bold">
                                         2016 - 2018</div>
-                                    <div class="flex flex-col justify-center h-8 fondoverde font-bold">
+                                    <div class="flex flex-col justify-center h-8 fondoamarillo font-bold">
                                         2019 -
                                         2020</div>
-                                    <div class="flex flex-col justify-center h-8 fondoverde font-bold">
+                                    <div class="flex flex-col justify-center h-8 fondoamarillo font-bold">
                                         2021 -
                                         2023</div>
 
@@ -400,12 +423,12 @@
                                 <h3 class="letra lg:text-lg font-bold mb-4">Colaboraciones</h3>
 
                                 <div id="main" class="letra2 grid grid-cols-3 justify-evenly">
-                                    <div class="flex flex-col justify-center h-8 fondoverde font-bold">
+                                    <div class="flex flex-col justify-center h-8 fondoamarillo font-bold">
                                         2020</div>
-                                    <div class="flex flex-col justify-center h-8 fondoverde font-bold">
+                                    <div class="flex flex-col justify-center h-8 fondoamarillo font-bold">
                                         2021 -
                                         2022</div>
-                                    <div class="flex flex-col justify-center h-8 fondoverde font-bold">
+                                    <div class="flex flex-col justify-center h-8 fondoamarillo font-bold">
                                         2023 -
                                         2024</div>
 
@@ -527,7 +550,7 @@
                 <div class="flex flex-col justify-center pb-4 z-20">
                     <!-- Header -->
                     <header class="flex flex-col items-center pt-8 px-4">
-                        <div class="w-full p-4 lg:px-44 rounded fondoverde">
+                        <div class="w-full p-4 lg:px-44 rounded fondoamarillo">
                             <h1 class="mb-4 text-xl lg:text-2xl font-bold">Hostelería</h1>
                             <p class="mb-4 text-sm lg:text-base">Lorem Ipsum.</p>
                         </div>
@@ -555,7 +578,7 @@
                 <div class="flex flex-col justify-center pb-4 z-20">
                     <!-- Header -->
                     <header class="flex flex-col items-center pt-8 px-4">
-                        <div class="w-full p-4 lg:px-44 rounded fondoverde">
+                        <div class="w-full p-4 lg:px-44 rounded fondoamarillo">
                             <h1 class="mb-4 text-xl lg:text-2xl font-bold">Genealogía</h1>
                             <p class="mb-4 text-sm lg:text-base">Lorem Ipsum.</p>
                         </div>
@@ -583,7 +606,7 @@
                 <div class="flex flex-col justify-center pb-4 z-20">
                     <!-- Header -->
                     <header class="flex flex-col items-center pt-8 px-4">
-                        <div class="w-full p-4 lg:px-44 rounded fondoverde">
+                        <div class="w-full p-4 lg:px-44 rounded fondoamarillo">
                             <h1 class="mb-4 text-xl lg:text-2xl font-bold">Desarrollo</h1>
                             <p class="mb-4 text-sm lg:text-base">Lorem Ipsum.</p>
                         </div>
