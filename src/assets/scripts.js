@@ -10,59 +10,12 @@ const toggleMenu = (event) => {
 document.querySelector("#boton").addEventListener("click", toggleMenu);
 document.addEventListener("click", () => menu.classList.add("hidden"));
 
-// VISIBILIDAD FONDO2 SEGÚN ORIGEN Y DESTINO
-const fondo1 = document.querySelector('.fondo2');
-const fondo2 = document.querySelector('.fondo2');
-const fondo3 = document.querySelector('.fondo3');
-const contenedorfondos = document.querySelector('.contenedorfondos');
-
-// A Home
-document.getElementById('btnhome').addEventListener('click', function () {
-    let scrollPosition = document.querySelector('.contenedorfondos').scrollTop;
-    let scrollHeight = contenedorfondos.scrollHeight;
-    // Cuando se quiere ir a fondo1 desde fondo2, si el scrollPosition es aprox un tercio del scrollHeight de contenedorfondos, fondo2 se hace visible
-    if (scrollPosition >= scrollHeight / 3.5 && scrollPosition <= scrollHeight / 2.5) {
-        fondo2.style.display = 'flex';
-    }
-    // En caso contrario fondo2 se hace invisible y vuelve a ser visible a los 500ms
-    else {
-        fondo2.style.display = 'none';
-        setTimeout(function () {
-            fondo2.style.display = 'flex';
-        }, 500);
-    }
-});
-
-// A About
-document.getElementById('btnabout').addEventListener('click', function () {
-    // fondo2 se hace visible
-    fondo2.style.display = 'flex';
-});
-
-// A Help
-document.getElementById('btnhelp').addEventListener('click', function () {
-    let scrollPosition = document.querySelector('.contenedorfondos').scrollTop;
-    let scrollHeight = contenedorfondos.scrollHeight;
-    // Cuando se quiere ir a fondo3 desde fondo1 (scrollPosition 0), fondo2 se hace invisible y vuelve a ser visible a los 500ms
-    if (scrollPosition == 0) {
-        fondo2.style.display = 'none';
-        setTimeout(function () {
-            fondo2.style.display = 'flex';
-        }, 500);
-    }
-    // En caso contrario fondo2 se hace visible
-    else {
-        fondo2.style.display = 'flex';
-    }
-
-});
-
 // Botones de navegación entre fondos
 const actions = {
     "#btnhome": document.querySelector('.fondo1').offsetTop,
-    "#btnabout": document.querySelector('.fondo2').offsetTop,
     "#btnhelp": document.querySelector('.fondo3').offsetTop
 };
+const contenedorfondos = document.querySelector('.contenedorfondos');
 for (let [btn, top] of Object.entries(actions)) {
     if (document.querySelector(btn)) {
         document.querySelector(btn).addEventListener("click", e => {
@@ -107,7 +60,7 @@ const esconderinfo = (sectionId) => {
         player.pauseVideo();
     }
 };
-["infomusica", "infohosteleria", "infogenealogia", "infodesarrollo", "boton", "btnhome", "btnabout", "btnhelp"].forEach(btnId => {
+["infomusica", "infohosteleria", "infogenealogia", "infodesarrollo", "boton", "btnhome", "btnhelp"].forEach(btnId => {
     document.getElementById(btnId).addEventListener("click", () => {
         esconderinfo('infomusica');
         esconderinfo('infohosteleria');
@@ -124,11 +77,22 @@ const esconderinfo = (sectionId) => {
     });
 });
 
-// Hover azul rombos fondo1
-var elementos = document.querySelectorAll('.hoverazul');
-elementos.forEach(function (elemento) {
+// Hover verde rombos fondo1
+var elementosv = document.querySelectorAll('.hoververde');
+elementosv.forEach(function (elemento) {
     elemento.addEventListener('mouseenter', function () {
-        this.style.backgroundColor = '#001a29';
+        this.style.backgroundColor = '#001702';
+    });
+    elemento.addEventListener('mouseleave', function () {
+        this.style.backgroundColor = '';
+    });
+});
+
+// Hover verde rombos fondo2
+var elementosa = document.querySelectorAll('.hoveramarillo');
+elementosa.forEach(function (elemento) {
+    elemento.addEventListener('mouseenter', function () {
+        this.style.backgroundColor = '#1B1900';
     });
     elemento.addEventListener('mouseleave', function () {
         this.style.backgroundColor = '';
@@ -139,7 +103,7 @@ elementos.forEach(function (elemento) {
 contenedorfondos.addEventListener('scroll', function () {
     let scrollTimeout;
     clearTimeout(scrollTimeout);
-    const buttonIDs = ['btnhome', 'btnabout', 'btnhelp', 'btnmusica', 'btnhosteleria', 'btngenealogia', 'btndesarrollo'];
+    const buttonIDs = ['btnhome', 'btnhelp', 'btnmusica', 'btnhosteleria', 'btngenealogia', 'btndesarrollo'];
     buttonIDs.forEach(id => {
         const button = document.getElementById(id);
         if (button) button.setAttribute('disabled', 'disabled');
@@ -154,8 +118,6 @@ contenedorfondos.addEventListener('scroll', function () {
         };
         // Si se está en fondo1
         if (estaCerca(document.querySelector('.fondo1'))) {
-            // Flecha no girada
-            document.getElementById("flecha").classList.remove("girarflecha");
             // Deshabilita botones hasta completar scroll
             buttonIDs.forEach(id => {
                 const button = document.getElementById(id);
@@ -163,7 +125,6 @@ contenedorfondos.addEventListener('scroll', function () {
             });
             // Subraya Home
             document.getElementById("btnhome").classList.add("subrayado");
-            document.getElementById("btnabout").classList.remove("subrayado");
             document.getElementById("btnhelp").classList.remove("subrayado");
             // Reinicia scrolls
             infocv.scrollTo(0, 0);
@@ -172,24 +133,8 @@ contenedorfondos.addEventListener('scroll', function () {
             scrollgenealogia.scrollTo(0, 0);
             scrolldesarrollo.scrollTo(0, 0);
         }
-        // Si se está en fondo2
-        else if (estaCerca(document.querySelector('.fondo2'))) {
-            // Flecha no girada
-            document.getElementById("flecha").classList.remove("girarflecha");
-            // Deshabilita botones hasta completar scroll
-            buttonIDs.forEach(id => {
-                const button = document.getElementById(id);
-                if (button) button.removeAttribute('disabled');
-            });
-            // Subraya About
-            document.getElementById("btnhome").classList.remove("subrayado");
-            document.getElementById("btnabout").classList.add("subrayado");
-            document.getElementById("btnhelp").classList.remove("subrayado");
-        }
         // Si se está en fondo3
         else if (estaCerca(document.querySelector('.fondo3'))) {
-            // Flecha girada
-            document.getElementById("flecha").classList.add("girarflecha");
             // Deshabilita botones hasta completar scroll
             buttonIDs.forEach(id => {
                 const button = document.getElementById(id);
@@ -197,7 +142,6 @@ contenedorfondos.addEventListener('scroll', function () {
             });
             // Subraya Help
             document.getElementById("btnhome").classList.remove("subrayado");
-            document.getElementById("btnabout").classList.remove("subrayado");
             document.getElementById("btnhelp").classList.add("subrayado");
             // Reinicia scrolls
             infocv.scrollTo(0, 0);

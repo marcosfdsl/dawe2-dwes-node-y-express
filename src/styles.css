@@ -37,84 +37,42 @@ body {
     background-image: url('assets/fotos/fondo1.jpg');
 }
 
-.fondo2 {
-    background-image: url('assets/fotos/fondo2.jpg');
-}
-
 .fondo3 {
     background-image: url('assets/fotos/fondo3.jpg');
 }
 
-/* Márgenes Rombos Negros */
-.margenrombotop {
-    margin-top: 4px;
-    margin-bottom: -1px;
-    margin-left: 4px;
-    margin-right: -1px;
-}
-
-.margenrombobot {
-    margin-top: -1px;
-    margin-bottom: 4px;
-    margin-left: -1px;
-    margin-right: 4px;
-}
-
-.margenromboleft {
-    margin-top: -1px;
-    margin-bottom: 4px;
-    margin-left: 4px;
-    margin-right: -1px;
-}
-
-.margenromboright {
-    margin-top: 4px;
-    margin-bottom: -1px;
-    margin-left: -1px;
-    margin-right: 4px;
-}
-
-/* Rotar y des-rotar rombos e iconos" */
-.rotar {
-    transform: rotate(45deg);
-}
-
-.desrotar {
-    transform: rotate(-45deg);
-}
-
-/* Hover azul rombos negros */
-.hoverazul {
+/* Hover azul */
+.hoververde {
     transition: background-color 0.3s;
 }
 
 /* Color fondo azul info */
-.fondoazul {
-    background-color: #0d91c93a;
+.fondoverde {
+    background-color: rgba(0, 204, 78, 0.227);
+}
+
+.fondoamarillo {
+    background-color: rgba(204, 201, 0, 0.227);
 }
 
 /* Azul links */
 .azul {
-    color: #0778a8;
+    color: rgb(0, 155, 83);
     transition: color 0.3s;
 }
 
 /* Hover azul links */
 .azul:hover {
-    color: #055f86;
+    color: #058650;
 }
 
-/* Hover agrandar iconos rombos */
+/* Hover agrandar iconos */
 .agrandar {
     transition: transform ease 0.5s;
 }
 
-.rotar.agrandar:hover {
-    transform: rotate(45deg) scale(1.2);
-}
-
-.desrotar.agrandar:hover {
-    transform: rotate(-45deg) scale(1.2);
+.agrandar:hover {
+    transform: scale(1.1);
 }
 
 /* Hover agrandar botón descarga CV */
@@ -133,20 +91,6 @@ body {
 
 .agrandar3:hover {
     transform: scale(1.05);
-}
-
-/* Flecha transparencia */
-.transparencia {
-    color: rgba(255, 255, 255, 0.452)
-}
-
-/* Girar Flecha */
-.animaciongirarflecha {
-    transition: transform 0.5s;
-}
-
-.girarflecha {
-    transform: rotate(180deg);
 }
 
 /* Subrayados menú */
