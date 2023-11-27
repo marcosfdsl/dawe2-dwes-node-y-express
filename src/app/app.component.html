@@ -7,322 +7,929 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
+<!-- Header -->
+<div class="flex justify-between fixed top-0 w-full bg-gradient-to-b from-black to-transparent z-50">
 
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
+  <!-- Dropdown Menu para móvil -->
+  <div class="flex flex-col lg:flex-row w-full">
 
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 982 239"
-        fill="none"
-        class="angular-logo"
-      >
-        <g clip-path="url(#a)">
-          <path
-            fill="url(#b)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-          <path
-            fill="url(#c)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-        </g>
-        <defs>
-          <radialGradient
-            id="c"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#FF41F8" />
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5" />
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient
-            id="b"
-            x1="0"
-            x2="982"
-            y1="192"
-            y2="192"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#F0060B" />
-            <stop offset="0" stop-color="#F0070C" />
-            <stop offset=".526" stop-color="#CC26D5" />
-            <stop offset="1" stop-color="#7702FF" />
-          </linearGradient>
-          <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
-        </defs>
-      </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+    <div class="flex justify-between z-50">
+      <button id="boton"
+        class="m-6 text-left text-xl text-white hover:text-gray-300 transition duration-300 ease-in-out fa-solid fa-bars esconder"></button>
+      <button id="refrescar"
+        class="m-6 lg:w-40 lg:my-6 lg:text-left text-xl text-white hover:text-gray-300 transition duration-300 ease-in-out font-bold">
+        S O F O S
+      </button>
+      <i class="m-6 text-xl fa-solid fa-bars invisible esconder"></i>
     </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
-        }
+
+    <div id="menu"
+      class="hidden lg:flex lg:flex-grow w-1/2 lg:w-max absolute left-0 top-0 pt-12 lg:pt-0 lg:relative bg-gradient-to-b from-black to-transparent z-40">
+      <div class="lg:flex lg:flex-grow lg:justify-center mt-6 lg:mt-0">
+        <div class="invisible lg:flex lg:w-1/3 h-0 lg:h-min"></div>
+        <div class="lg:flex mb-4 lg:mb-0">
+          <button id="btnhome"
+            class="w-full lg:w-1/3 px-6 py-2 lg:py-0 text-left text-white hover:text-gray-300 transition duration-300 ease-in-out hover:bg-black lg:hover:bg-transparent subrayado">Home</button>
+          <button id="btnabout"
+            class="w-full lg:w-1/3 px-6 py-2 lg:py-0 text-left text-white hover:text-gray-300 transition duration-300 ease-in-out hover:bg-black lg:hover:bg-transparent">About</button>
+          <button id="btnhelp"
+            class="w-full lg:w-1/3 px-6 py-2 lg:py-0 text-left text-white hover:text-gray-300 transition duration-300 ease-in-out hover:bg-black lg:hover:bg-transparent">Help</button>
+        </div>
+        <div class="invisible lg:flex lg:w-1/3 h-0 lg:h-min"></div>
       </div>
-      <div class="social-links">
-        <a
-          href="https://github.com/angular/angular"
-          aria-label="Github"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Github"
-          >
-            <path
-              d="M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="20"
-            viewBox="0 0 25 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M8.04524 20C17.3335 20 22.4138 12.3047 22.4138 5.63144C22.4138 5.41287 22.4138 5.19529 22.399 4.97869C23.3874 4.26381 24.2405 3.37867 24.9185 2.3647C23.9969 2.77329 23.0192 3.04112 22.018 3.15923C23.0723 2.52818 23.8613 1.53552 24.2382 0.366057C23.2469 0.954335 22.1624 1.36889 21.0315 1.59182C20.2701 0.782212 19.2631 0.246107 18.1663 0.0664704C17.0695 -0.113166 15.9441 0.0736804 14.9642 0.598096C13.9843 1.12251 13.2046 1.95526 12.7457 2.96748C12.2868 3.9797 12.1742 5.11495 12.4255 6.19756C10.4178 6.09685 8.45366 5.57507 6.66064 4.66609C4.86763 3.75712 3.28579 2.48127 2.01781 0.921344C1.37203 2.03306 1.17424 3.34911 1.46472 4.60154C1.75519 5.85397 2.51208 6.9486 3.58128 7.66257C2.77759 7.63903 1.9914 7.42221 1.28924 7.03049V7.09449C1.28956 8.26041 1.69316 9.39034 2.4316 10.2926C3.17003 11.1949 4.19783 11.8139 5.34067 12.0448C4.59721 12.2476 3.81715 12.2772 3.06045 12.1315C3.38327 13.1348 4.01156 14.0122 4.85746 14.641C5.70337 15.2698 6.72461 15.6185 7.77842 15.6384C6.73139 16.4614 5.53237 17.0699 4.24995 17.4291C2.96753 17.7882 1.62687 17.891 0.304688 17.7316C2.61411 19.2136 5.30121 19.9997 8.04524 19.9961"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
-          aria-label="Youtube"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="29"
-            height="20"
-            viewBox="0 0 29 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Youtube"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z"
-            />
-          </svg>
-        </a>
+      <div class="lg:flex justify-end lg:w-44 mt-2 mb-4 ml-4 lg:mt-0 lg:mb-0 lg:ml-6 lg:mr-4">
+        <a href="https://www.linkedin.com/in/marcos-fernandez-de-salamanca/"
+          class="self-center p-2 text-xl text-white hover:text-gray-300 transition duration-300 ease-in-out hover:bg-black lg:hover:bg-transparent fa-brands fa-linkedin"></a>
+        <a href="https://www.instagram.com/sofosbars"
+          class="self-center p-2 text-xl text-white hover:text-gray-300 transition duration-300 ease-in-out hover:bg-black lg:hover:bg-transparent fa-brands fa-instagram"></a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Flecha decoración -->
+<div id="flecha" class="fixed bottom-4 animaciongirarflecha">
+  <i class="text-xl fa-solid fa-arrow-down-long fa-beat-fade transparencia z-50"></i>
+</div>
+
+<!-- Fondos 1, 2 y 3 -->
+<div class="contenedorfondos">
+
+  <!-- Contenido de fondo1 (PORTFOLIO) -->
+  <div class="flex flex-col justify-center w-screen h-screen fondos fondo1">
+
+    <div class="flex justify-center items-center w-full h-full z-10">
+      <div class="grid grid-cols-3 justify-center items-center mb-8">
+
+        <!-- Primera fila -->
+        <div class="invisible"></div>
+        <div
+          class="bg-white rotar flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col">
+          <button id="btnmusica" class="bg-black hoverazul flex items-center justify-center h-full margenrombotop">
+            <img src="../assets/fotos/simbolos/musica.png" class="desrotar w-1/3 agrandar" alt="">
+          </button>
+        </div>
+        <div class="invisible"></div>
+
+        <!-- Segunda fila -->
+        <div
+          class="bg-white rotar flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col">
+          <button id="btnhosteleria" class="bg-black hoverazul flex items-center justify-center h-full margenromboleft">
+            <img src="../assets/fotos/simbolos/hosteleria.png" class="desrotar w-1/3 agrandar" alt="">
+          </button>
+        </div>
+        <div class="invisible"></div>
+        <div
+          class="bg-white rotar flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col">
+          <button id="btngenealogia"
+            class="bg-black hoverazul flex items-center justify-center h-full margenromboright">
+            <img src="../assets/fotos/simbolos/genealogia.png" class="desrotar w-1/3 agrandar" alt="">
+          </button>
+        </div>
+
+        <!-- Tercera fila -->
+        <div class="invisible"></div>
+        <div
+          class="bg-white rotar flex items-center justify-center w-20 sm:w-32 lg:w-24 2xl:w-32 h-20 sm:h-32 lg:h-24 2xl:h-32 flex-col hover:bg-gray-300">
+          <button id="btndesarrollo" class="bg-black hoverazul flex items-center justify-center h-full margenrombobot">
+            <img src="../assets/fotos/simbolos/desarrollo.png" class="desrotar w-1/3 agrandar" alt="">
+          </button>
+        </div>
+        <div class="invisible"></div>
+      </div>
+    </div>
+
+    <!-- Info Música -->
+    <div id="infomusica"
+      class="absolute w-full h-full flex flex-col justify-center items-center transition-all duration-500 transform opacity-0 translate-y-full z-20">
+      <div id="scrollmusica" class="overflow-y-auto bg-white rounded-3xl h-2/3 lg:h-3/4 w-5/6 lg:w-2/3 lg:mt-8">
+        <div class="flex flex-col items-center justify-center text-center relative">
+          <div class="flex flex-col justify-center pb-4 z-20">
+            <!-- Header -->
+            <header class="flex flex-col items-center pt-8 px-4">
+              <img src="../assets/fotos/flornegra.png" alt="Logo Sofos flor negra"
+                class="justify-center w-28 h-28 mb-6 object-cover agrandar3">
+              <div class="w-full p-4 lg:px-44 rounded fondoazul">
+                <h1 class="mb-4 text-xl lg:text-2xl font-bold">Sofos</h1>
+                <p class="mb-4 text-sm lg:text-base">
+                  Sofos es el nombre de mi faceta artística, un proyecto musical que cuenta con
+                  más de <strong>10 años de recorrido</strong> y alrededor de <strong>20.000
+                    oyentes mensuales</strong>. He
+                  producido más de 80 canciones y 5 álbumes, de los cuales 3 ya fueron publicados.
+                  He actuado en numerosos festivales y conciertos, y participado en grandes
+                  eventos como <a class="azul font-bold" href="https://youtu.be/rt9ryt7Wj4g?si=Wl7Wna5sWIPmHbrA">Reyes
+                    de Plaza</a>
+                  (BDP x Urban Roosters) o Urban Park de Madrid
+                  Salvaje.
+                </p>
+              </div>
+              <div class="videocontenedor z-50"> <iframe id="video" class="video"
+                  src="https://www.youtube.com/embed/1GqGpaHtKC4?enablejsapi=1" allowfullscreen>
+                </iframe> </div>
+            </header>
+            <!-- Contenido principal -->
+            <main class="py-4 px-4">
+              <!-- Escuchar -->
+              <section>
+                <h2 class="text-xl lg:text-2xl font-bold mb-8">ESCUCHAR</h2>
+                <div class="flex justify-evenly items-center mb-8 px-4 py-8 lg:px-60 fondoazul rounded">
+                  <a href="https://open.spotify.com/intl-es/artist/5d3mZTupUjrU9lRPeedTpj?si=rsfLD7D2QrqH76uh8DlWjg"
+                    class="fa-brands fa-spotify text-4xl azul agrandar3"></a>
+                  <a href="https://youtube.com/@sofosbars" class="fa-brands fa-youtube text-4xl azul agrandar3"></a>
+                  <a href="https://music.apple.com/es/artist/sofos/1483755970"
+                    class="fa-brands fa-itunes-note text-4xl azul agrandar3"></a>
+                </div>
+              </section>
+              <!-- Biografía -->
+              <section>
+                <h2 class="text-xl lg:text-2xl font-bold mb-8">BIOGRAFÍA</h2>
+                <!-- 2009 -->
+                <div class="mb-4 p-4 lg:px-44 bg-gray-100 rounded">
+                  <h3 class="text-sm lg:text-base font-bold mb-2">2009 - 2015</h3>
+                  <p class="text-sm lg:text-base">Empecé a interesarme por el rap en 2009,
+                    escribiendo mis propias canciones cuando tenía apenas 10 años. Ya tocaba
+                    algún instrumento, por lo que aprendí a producir instrumentales en FL
+                    Studio, las cuales aún se pueden encontrar en <a class="azul font-bold"
+                      href="https://soundcloud.com/sofosmusic">SoundCloud</a> bajo el nombre
+                    de Mark.</p><br>
+                  <p class="text-sm lg:text-base">En 2013, pude grabar mis primeros temas,
+                    incluyendo Ácido, Vocablos y Sangre Fría. Para 2015 ya había grabado al
+                    menos 10 canciones, a pesar de no tener un micrófono de calidad y carecer de
+                    conocimientos de mezcla. Desgraciadamente, ninguno de estos trabajos se
+                    encuentra en la red, aunque aún hay un vídeo publicado en YouTube titulado
+                    <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=6Avoe6kf-3M&ab_channel=Mark%26Jota">Sofos
+                      | Cómo hago mis bases</a> (a pesar de haber conservado el nombre de Mark
+                    hasta 2019).
+                  </p>
+                </div>
+                <!-- 2016 -->
+                <div class="mb-4 p-4 lg:px-32 bg-gray-200 rounded">
+                  <h3 class="text-sm lg:text-base font-bold mb-2">2016 - 2018</h3>
+                  <p class="text-sm lg:text-base">Me fui a estudiar a Oregón (Estados Unidos)
+                    durante un año en septiembre de 2016. Lo que podría haber sido un retroceso
+                    en mi creación musical resultó ser todo lo contrario. Tuve mucho tiempo
+                    libre para trabajar en mi primer disco <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=uvwsaQ5sGkk&list=PLnKYAXIwmuVldqPzyBZnBqng1EgFowmpp&ab_channel=Mark">Anhelo</a>,
+                    compuesto por 11 canciones y un skit, que pude grabar en un estudio de radio
+                    donde trabajé. Este disco aún se encuentra en YouTube bajo el nombre de
+                    Mark.</p><br>
+                  <p class="text-sm lg:text-base">Ya de vuelta en España continué grabando
+                    canciones según las iba escribiendo, con letras cada vez más complejas que
+                    trataban sobre temas profundos o filosóficos. Es el caso de temas como <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=Z5-etrzNWv0&ab_channel=Mark">Conciencia</a>,
+                    <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=ob_kV9oVr_c&ab_channel=Mark">Solipsismo</a>,
+                    <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=7l_ycTL_KWI&ab_channel=Mark">Concepción</a>
+                    o <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=jKsgOpalJzo&ab_channel=Mark">Sofía</a>.
+                    También experimenté con temas agresivos como <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=_cv0YgRMlAQ&ab_channel=Mark">Orden</a>
+                    o <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=mLg95sQFm_w&ab_channel=Mark">Diálogos</a>,
+                    que influyeron en mi acercamiento a un sonido más oscuro en el futuro. Sin
+                    embargo, esta agresividad se
+                    refiere al sonido y no al contenido de las letras, conservando siempre la
+                    misma esencia.
+                  </p>
+                </div>
+                <!-- 2019 -->
+                <div class="mb-4 p-4 lg:px-32 bg-gray-300 rounded">
+                  <h3 class="text-sm lg:text-base font-bold mb-2">2019 - 2020</h3>
+                  <p class="text-sm lg:text-base">Se podría decir que en 2019 establecí mi estilo
+                    propio, ahora bajo el nombre de Sofos. Además, por primera vez, decidí
+                    grabar en un estudio profesional, al que aún sigo visitando. En BKK
+                    Estudios, grabé el tema <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=930ojD-Yvxw&ab_channel=Sofos">Andrómeda</a>,
+                    que presenté en el Tour Music Festival de 2019. Ese año, también tuve la
+                    oportunidad de participar en la conocida serie <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=Th5zRhVQP0U&ab_channel=RETINA">Madrid
+                      Live Oneshot</a>, todavía usando el alias de Mark.</p><br>
+                  <p class="text-sm lg:text-base">En 2020, despegó mi famoso tema <a class="azul font-bold"
+                      href="https://open.spotify.com/intl-es/album/6j7RpfebSqddVbV1mi2Anl?si=JGDc18teQHWYfh7dNkkusA">Bars
+                      I</a>, que actualmente cuenta con más de 900.000 reproducciones en
+                    Spotify. Más tarde salió <a class="azul font-bold"
+                      href="https://open.spotify.com/album/2O1Xm2GLWQi3zemUvVteTh?si=x4bYQCVqQGCFA3ZQEomZ1w">Bars
+                      II</a>, un remix en colaboración con Last Good Kid On Earth. Junto con
+                    el mismo artista se lanzó <a class="azul font-bold"
+                      href="https://open.spotify.com/album/5aABeWBlp2Bar1SN6uRJPf?si=l6p64nFjSBC8R_wc9-JWyg">Flesh</a>
+                    poco después,
+                    esta vez sobre una instrumental de drill. También se publicaron temas
+                    como <a class="azul font-bold"
+                      href="https://open.spotify.com/album/058M3CmWNyNzy8oVcLlwxi?si=8kKcXpl5Q6aJVamM6Vqngg">Hábitat</a>
+                    (grabado por Dawiz) y <a class="azul font-bold" href="">Síndrome</a>
+                    (grabado por Hilton), que tiene su propio oneshot en el canal de <a class="azul font-bold"
+                      href="https://www.youtube.com/watch?v=nxowckFWYpE&ab_channel=BigWingsMusic">Big
+                      Wings Music</a>.</p>
+                </div>
+                <!-- 2021 -->
+                <div class="mb-4 p-4 lg:px-32 bg-gray-200 rounded">
+                  <h3 class="text-sm lg:text-base font-bold mb-2">2021 - 2022</h3>
+                  <p class="text-sm lg:text-base">El trabajo que consolidó mi carrera fue mi
+                    penúltimo disco, <a class="azul font-bold"
+                      href="https://open.spotify.com/intl-es/album/7bGBD8MKF51C5KiUSMfkeK?si=4Bqr5W3wRZWu0yYi9cw1fQ">BIG
+                      FISH</a>, que consta de 12 canciones de diversos estilos dentro del
+                    género urbano. Incluye colaboraciones de artistas como Zehache 07, Kaii
+                    Tropicc o Last Good Kid On Earth. Lanzado el 11 de enero de 2022,
+                    actualmente cuenta con más de 800.000 reproducciones en Spotify y se puede
+                    encontrar un recopilatorio del disco en video en <a class="azul font-bold"
+                      href="https://youtu.be/1GqGpaHtKC4?feature=shared">YouTube</a>.</p><br>
+                  <p class="text-sm lg:text-base">Además de BIG FISH, empecé a preparar mi próximo
+                    disco <a class="azul font-bold"
+                      href="https://open.spotify.com/intl-es/album/4ogQPJOoJHF1E3qnMS6uyO?si=8shL3l7cRm6yhcYsvystOA">AÚN
+                      DICEN QUE EL PESCADO ES CARO</a>, del cual hablaremos más adelante,
+                    sacando varios trabajos que formarían parte de él, como <a class="azul font-bold"
+                      href="https://youtu.be/GNSyBZzmjNo?si=KJRoP4vsU_WF7EKG">Algoritmo</a>,
+                    <a class="azul font-bold" href="https://youtu.be/-UbAbsH06VQ?si=uWA6Dl6LaKTcWwSc">Kiddo</a> y <a
+                      class="azul font-bold" href="https://youtu.be/z2s7rEYKB-s?si=fJWD1rVL0utVWpBI">Lo Entiendo</a>.
+                    También publiqué singles independientes como <a class="azul font-bold"
+                      href="https://youtu.be/hyhFmpc874s?si=pxZvSuDoZxA768o-">No Es Serio</a>
+                    y <a class="azul font-bold" href="https://youtu.be/UDUoyWXcA_c?si=VTaenH4J_PoHK-9D">Baklavas</a>.
+                  </p>
+                </div>
+                <!-- 2023 -->
+                <div class="mb-8 p-4 lg:px-32 bg-gray-100 rounded">
+                  <h3 class="text-sm lg:text-base font-bold mb-2">2023</h3>
+                  <p class="text-sm lg:text-base">A principios de 2023 terminé de construir mi
+                    último disco, ADQEPEC (AÚN DICEN QUE EL PESCADO ES CARO), que fue publicado
+                    el 20 de abril tras haber lanzado los últimos temas antes de su debut, <a class="azul font-bold"
+                      href="https://youtu.be/nQVSbhg_SwQ?si=V8XDjCgMJtfaEmhk">Reseteo</a> y <a class="azul font-bold"
+                      href="https://youtu.be/SnUiFG4BFio?si=OBVPOpa5OEK2-gkc">Pausa</a>.
+                    Por otro lado, el conocido estudio de grabación madrileño BKK Estudios
+                    decidió
+                    comenzar una serie de colaboraciones con diferentes artistas, siendo el
+                    primero yo mismo. De esta colaboración surgió <a class="azul font-bold"
+                      href="https://youtu.be/sasg0KvITpA?si=K7KWWjz0IrH-NPfa">Barotrauma</a>,
+                    grabado, producido, mezclado y masterizado en el mismo estudio.</p><br>
+                  <p class="text-sm lg:text-base">Actualmente, estoy trabajando en nuevos singles
+                    y colaboraciones con otros artistas de la escena. Además, ya se ha anunciado
+                    la fecha de mi próximo álbum <b>PAROLES PERTINENTES</b> (4/4/24), que
+                    incluye temas como <a class="azul font-bold"
+                      href="https://youtu.be/evMr-qPoiXc?si=RvZTEgdaxLQXTK7K">Ancelotti</a>,
+                    <a class="azul font-bold" href="https://youtu.be/IeWh_T3a4WI?si=o-6Nu5byz0WVKomj">Target</a> y <a
+                      class="azul font-bold" href="https://youtu.be/bA-xW1BSfiI?si=OZEsNttwI7MPhXmo">Post Mortem</a>.
+                  </p>
+                </div>
+              </section>
+              <!-- Alias -->
+              <section>
+                <h2 class="text-xl lg:text-2xl font-bold mb-8">ALIAS</h2>
+                <div class="mb-8 p-4 lg:px-44 fondoazul rounded">
+                  <p class="text-sm lg:text-base">Comencé a utilizar el alias de Sofos a partir de
+                    2019, que nació a raíz de mi interés por la filosofía griega. Aunque fue una
+                    transición progresiva, se podría decir que mi última canción como Mark fue
+                    <a class="azul font-bold" href="https://youtu.be/8-A7WfpH0YE?si=zBy5nB6UZWH0E9SQ">Serotón</a>. Yo
+                    digo: “Sofos es la suma de paradigmas y vivencias atemporales que el yo de
+                    un momento determinado nunca será capaz de reunir”.
+                  </p><br>
+                  <p class="text-sm lg:text-base">Una curiosidad es que es un palíndromo, es
+                    decir, se lee igual tanto de izquierda a derecha como de derecha a
+                    izquierda.</p>
+                </div>
+              </section>
+
+              <!-- Discografía -->
+              <section>
+                <h2 class="text-xl lg:text-2xl font-bold mb-8">DISCOGRAFÍA</h2>
+                <!-- Solitario -->
+                <div class="mb-4 pt-4 pb-8 lg:px-4 bg-gray-200 rounded lg:text-base">
+                  <h3 class="letra lg:text-lg font-bold mb-4">En solitario</h3>
+
+                  <div id="main" class="letra2 grid grid-cols-4 justify-evenly">
+                    <div class="col-span-2 flex flex-col justify-center h-8 fondoazul font-bold">
+                      2016 - 2018</div>
+                    <div class="flex flex-col justify-center h-8 fondoazul font-bold">
+                      2019 -
+                      2020</div>
+                    <div class="flex flex-col justify-center h-8 fondoazul font-bold">
+                      2021 -
+                      2023</div>
+
+                    <div class="h-8"></div>
+                    <div class="h-8 bg-gray-300"></div>
+                    <div class="h-8"></div>
+                    <div class="h-8 bg-gray-300"></div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200 font-bold">
+                      Álbumes
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/VD598xOfiE4?si=WFsVHB2JI8x_fCAv">Bio</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200 font-bold">
+                      Singles
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300 font-bold">
+                      Álbumes
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://www.youtube.com/watch?v=uvwsaQ5sGkk&list=PLnKYAXIwmuVldqPzyBZnBqng1EgFowmpp">ANHELO</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/QR7RHaeeH08?si=T40bgCJF1TOZLraU">Diss
+                        Track</a></div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/8-A7WfpH0YE?si=7HbAfaR4SEnwq0Al">Serotón</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://open.spotify.com/intl-es/album/7bGBD8MKF51C5KiUSMfkeK?si=-avElfYgQhKMeetbLMMQgQ">BIG
+                        FISH</a>
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200 font-bold">
+                      Singles
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/1Dp7GAxqxpA?si=PSJwg25rVhsLaJ77">Huella</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://open.spotify.com/intl-es/album/0Zs27gv8EzbCGhldfsU0Q2?si=M8F4LDp8T2mpvvgRpOW9Iw">Andrómeda</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://open.spotify.com/intl-es/album/4ogQPJOoJHF1E3qnMS6uyO?si=Qha1pwFTT5K_JeSs-RxsjA">ADQEPEC</a>
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/0ueeaF07TvA?si=VdYEdzX5fHZE9YlN">Chica
+                        de
+                        Artes</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/BOeKoQ8kk0k?si=pB0of66Bmhr3hWDB">Martirio</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://open.spotify.com/album/058M3CmWNyNzy8oVcLlwxi?si=mI-QnMXiR1mhHOXuqXpjfQ">Hábitat</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300 font-bold">
+                      Singles
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/1MH11HRcPeQ?si=7unjJTziOT3Hu2KI">Demacre</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/7l_ycTL_KWI?si=eby4DOUZHpEjzd-l">Concepción</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://open.spotify.com/intl-es/album/34rBMfNMO2zWKZ56qAJqFl?si=CN2Gt7XnTDqCUbEdV0XaZg">Síndrome</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://open.spotify.com/album/1EyX95TWMq6qXDcRVXCV6d?si=r5exusY-QxWLXaobYNCNIQ">Sin
+                        Filtro</a>
+                    </div>
+
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/ob_kV9oVr_c?si=F4Gr9fLwGMOkzgG7">Solipsismo</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/UT2NWemfUwA?si=NcpDaVLOwNcAKz8N">Criminal</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://open.spotify.com/intl-es/album/6j7RpfebSqddVbV1mi2Anl?si=M17DM8vLQ36xomDaV-0TYQ">Bars
+                        I</a></div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/hyhFmpc874s?si=ECNnfnPl1wXrNZMG">No
+                        Es
+                        Serio</a>
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/Bkj8LSTDb4U?si=Zgdv4hgeHEBEmiZ8">Pedazos</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/lVPH9ge276k?si=IquQZtae9EqxP3--">Evadido</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/UDUoyWXcA_c?si=IbQ-v8VOj7YpmQ5L">Baklavas</a>
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/gXb1Jk9EkT8?si=hWaRUVJkvvIcvhzK">Altruismo</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/6-sx_D7FO-I?si=9ALLEQoc4_uxaexj">Lichtung</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/O85Xvsgg8oM?si=UaJAouskK4yFjWNw">Virtud</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/oGvGjULkHTM?si=5rJsHlsg3QkzqxD9">Deep</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/Z5-etrzNWv0?si=upZu-UNZcmWaoqUN">Conciencia</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/_cv0YgRMlAQ?si=kzdgrqVJ79PFMxpS">Orden</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/jKsgOpalJzo?si=flT_dI5LLKQQ_467">Sofía</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/mLg95sQFm_w?si=8LdBHLRt_z8pd-wR">Diálogos</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">
+                    </div>
+
+                    <div class="h-8"></div>
+                    <div class="h-8 bg-gray-300"></div>
+                    <div class="h-8"></div>
+                    <div class="h-8 bg-gray-300"></div>
+                  </div>
+
+                </div>
+                <!-- Colaboraciones -->
+                <div class="mb-8 pt-4 pb-8 lg:px-4 bg-gray-200 rounded lg:text-base">
+                  <h3 class="letra lg:text-lg font-bold mb-4">Colaboraciones</h3>
+
+                  <div id="main" class="letra2 grid grid-cols-3 justify-evenly">
+                    <div class="flex flex-col justify-center h-8 fondoazul font-bold">
+                      2020</div>
+                    <div class="flex flex-col justify-center h-8 fondoazul font-bold">
+                      2021 -
+                      2022</div>
+                    <div class="flex flex-col justify-center h-8 fondoazul font-bold">
+                      2023 -
+                      2024</div>
+
+                    <div class="h-8"></div>
+                    <div class="h-8 bg-gray-300"></div>
+                    <div class="h-8"></div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/rVFKubVuj-M?si=osRLbqDrdDBBGtu_">Moiras</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://www.youtube.com/watch?v=1GqGpaHtKC4&t=372s">Misterio</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/sasg0KvITpA?si=wrGEJGoSG2tze2Ft">Barotrauma</a>
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      Ene.miez, PG232
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">
+                      Zehache 07
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      BKK Estudios</div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://open.spotify.com/intl-es/album/2O1Xm2GLWQi3zemUvVteTh?si=dixIajg-TierS1VDEngcOQ">Bars
+                        II</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://youtu.be/gPG30ra6KGs?si=Bc7GvMe13Mn_wDvl">Sour
+                        Diesel</a></div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://open.spotify.com/intl-es/track/0rSjby12BcITm8NS3wPOYA?si=f7b7c08383c54520">Phantom</a>
+                    </div>
+
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      Last Good Kid on
+                      Earth</div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">
+                      Fives</div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      Spooky Phantom
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://open.spotify.com/intl-es/album/5aABeWBlp2Bar1SN6uRJPf?si=OG-rbbx-TBGzs-3DxXzyLg">Flesh</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://www.youtube.com/watch?v=1GqGpaHtKC4&t=964s">Feedback</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      <p class="text-gray-700 font-bold" href="">London</p>
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      Last Good Kid on
+                      Earth</div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">
+                      Kaii Tropicc</div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      Guijxsv</div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/Th5zRhVQP0U?si=5Ag3_tiyVCij0hEz">MLOS
+                        2.0
+                        #78</a></div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://www.youtube.com/watch?v=1GqGpaHtKC4&t=1305s">Naider</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      RETINA</div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">P?
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200"><a class="azul font-bold"
+                        href="https://youtu.be/J9YbSL_allU?si=OoZ0n-IJ5XfbZY0q">Garabato</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300"><a class="azul font-bold"
+                        href="https://www.youtube.com/watch?v=1GqGpaHtKC4&t=1482s">Endzone</a>
+                    </div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                      Big Wings</div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-300">
+                      Last Good Kid On
+                      Earth</div>
+                    <div class="flex flex-col justify-center h-8 bg-gray-200">
+                    </div>
+
+                    <div class="h-8"></div>
+                    <div class="h-8 bg-gray-300"></div>
+                    <div class="h-8"></div>
+                  </div>
+
+                </div>
+              </section>
+              <!-- Dossier -->
+              <section>
+                <h2 class="text-xl lg:text-2xl font-bold mb-8">DOSSIER</h2>
+                <div class="flex justify-center items-center mb-8 p-4 lg:px-44 fondoazul rounded">
+                  <a href="https://drive.google.com/uc?export=download&id=1OfjV4hy2u2WAx3VHL1Ry5NXqf-glBe6T"
+                    title="Descargar Dossier"
+                    class="flex justify-center items-center bg-black rounded-full w-12 h-12 hover:bg-gray-800 agrandar2">
+                    <i class="fa-solid fa-file-arrow-down text-white text-xl"></i>
+                  </a>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Info Hostelería -->
+    <div id="infohosteleria"
+      class="absolute w-full h-full flex flex-col justify-center items-center transition-all duration-500 transform opacity-0 translate-y-full z-20">
+      <div id="scrollhosteleria" class="overflow-y-auto bg-white rounded-3xl h-2/3 lg:h-3/4 w-5/6 lg:w-2/3 lg:mt-8">
+        <div class="flex flex-col items-center justify-center text-center relative">
+          <div class="flex flex-col justify-center pb-4 z-20">
+            <!-- Header -->
+            <header class="flex flex-col items-center pt-8 px-4">
+              <div class="w-full p-4 lg:px-44 rounded fondoazul">
+                <h1 class="mb-4 text-xl lg:text-2xl font-bold">Hostelería</h1>
+                <p class="mb-4 text-sm lg:text-base">Lorem Ipsum.</p>
+              </div>
+            </header>
+            <!-- Contenido principal -->
+            <main class="py-4 px-4">
+              <section>
+                <h2 class="text-xl lg:text-2xl font-bold mt-4 mb-8">LOREM IPSUM</h2>
+                <div class="mb-4 p-4 lg:px-44 bg-gray-100 rounded">
+                  <h3 class="text-sm lg:text-base font-bold mb-2">Lorem Ipsum</h3>
+                  <p class="text-sm lg:text-base">Lorem Ipsum.</p>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Genealogía -->
+    <div id="infogenealogia"
+      class="absolute w-full h-full flex flex-col justify-center items-center transition-all duration-500 transform opacity-0 translate-y-full z-20">
+      <div id="scrollgenealogia" class="overflow-y-auto bg-white rounded-3xl h-2/3 lg:h-3/4 w-5/6 lg:w-2/3 lg:mt-8">
+        <div class="flex flex-col items-center justify-center text-center relative">
+          <div class="flex flex-col justify-center pb-4 z-20">
+            <!-- Header -->
+            <header class="flex flex-col items-center pt-8 px-4">
+              <div class="w-full p-4 lg:px-44 rounded fondoazul">
+                <h1 class="mb-4 text-xl lg:text-2xl font-bold">Genealogía</h1>
+                <p class="mb-4 text-sm lg:text-base">Lorem Ipsum.</p>
+              </div>
+            </header>
+            <!-- Contenido principal -->
+            <main class="py-4 px-4">
+              <section>
+                <h2 class="text-xl lg:text-2xl font-bold mt-4 mb-8">LOREM IPSUM</h2>
+                <div class="mb-4 p-4 lg:px-44 bg-gray-100 rounded">
+                  <h3 class="text-sm lg:text-base font-bold mb-2">Lorem Ipsum</h3>
+                  <p class="text-sm lg:text-base">Lorem Ipsum.</p>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Desarrollo -->
+    <div id="infodesarrollo"
+      class="absolute w-full h-full flex flex-col justify-center items-center transition-all duration-500 transform opacity-0 translate-y-full z-20">
+      <div id="scrolldesarrollo" class="overflow-y-auto bg-white rounded-3xl h-2/3 lg:h-3/4 w-5/6 lg:w-2/3 lg:mt-8">
+        <div class="flex flex-col items-center justify-center text-center relative">
+          <div class="flex flex-col justify-center pb-4 z-20">
+            <!-- Header -->
+            <header class="flex flex-col items-center pt-8 px-4">
+              <div class="w-full p-4 lg:px-44 rounded fondoazul">
+                <h1 class="mb-4 text-xl lg:text-2xl font-bold">Desarrollo</h1>
+                <p class="mb-4 text-sm lg:text-base">Lorem Ipsum.</p>
+              </div>
+            </header>
+            <!-- Contenido principal -->
+            <main class="py-4 px-4">
+              <section>
+                <h2 class="text-xl lg:text-2xl font-bold mt-4 mb-8">LOREM IPSUM</h2>
+                <div class="mb-4 p-4 lg:px-44 bg-gray-100 rounded">
+                  <h3 class="text-sm lg:text-base font-bold mb-2">Lorem Ipsum</h3>
+                  <p class="text-sm lg:text-base">Lorem Ipsum.</p>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</main>
+
+  <!-- Contenido de fondo2 (CURRÍCULUM) -->
+  <div class="flex flex-col justify-center w-screen h-screen fondos fondo2">
+
+    <div id="infocv"
+      class="overflow-y-auto w-5/6 lg:w-2/3 h-2/3 lg:h-3/4 self-center relative lg:mt-8 bg-white rounded-3xl">
+
+      <div class="text-center">
+
+        <!-- Encabezado -->
+        <header class="flex flex-col items-center pt-8 px-4">
+
+          <!-- Foto Marcos -->
+          <a href="https://www.linkedin.com/in/marcos-fernandez-de-salamanca/" target="_blank">
+            <img src="../assets/fotos/foto.png" alt="Foto Marcos"
+              class="justify-center w-28 h-28 mb-4 object-cover rounded-full agrandar3">
+          </a>
+
+          <!-- Info Marcos -->
+          <div>
+            <h1 class="mb-4 text-xl lg:text-2xl font-bold">Marcos Fernández de Salamanca López</h1>
+            <p class="text-sm lg:text-base">11/07/2001</p>
+            <p class="text-xs lg:text-sm font-bold">Maestro Cubiles 12, Torrelodones Madrid, 28250</p>
+            <p class="text-sm lg:text-base">603330106</p>
+            <div class="mb-4">
+              <i class="fa-solid fa-id-card"></i>
+              <i class="fa-solid fa-car"></i>
+            </div>
+            <a class="text-sm text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+              href="mailto:mark.musicteam@hotmail.com">mark.musicteam hotmail.com</a>
+          </div>
+
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="pt-4 px-4">
+
+          <!-- Títulos académicos -->
+          <section>
+
+            <h2 class="mt-2 mb-8 text-xl lg:text-2xl font-bold">TÍTULOS ACADÉMICOS</h2>
+
+            <!-- U-Tad -->
+            <div class="mb-4 p-4 lg:px-64 bg-red-100 rounded">
+              <h3 class="text-sm lg:text-base font-bold"><a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://u-tad.com/">U-Tad <i class="fa-solid fa-up-right-from-square text-sm"></i></a> | Las
+                Rozas, Madrid (CURSANDO
+                ACTUALMENTE)</h3>
+              <p class="text-sm lg:text-base">Grado superior en Desarrollo de Aplicaciones Web</p>
+            </div>
+
+            <!-- SAE -->
+            <div class="mb-4 p-4 lg:px-64 bg-red-200 rounded">
+              <h3 class="text-sm lg:text-base font-bold"><a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://www.sae.edu/esp/">SAE Institute Spain <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a> | Madrid (MAYO 2022)
+              </h3>
+              <p class="text-sm lg:text-base">Módulo en producción, mezcla y masterización de audio
+              </p>
+            </div>
+
+            <!-- IES -->
+            <div class="mb-4 p-4 lg:px-64 bg-red-100 rounded">
+              <h3 class="text-sm lg:text-base font-bold"><a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://www.educa2.madrid.org/web/diego-velazquez">I.E.S. Diego
+                  Velázquez <i class="fa-solid fa-up-right-from-square text-sm"></i></a> | Torrelodones, Madrid
+                (JUNIO 2020)</h3>
+              <p class="text-sm lg:text-base">Bachillerato Social</p>
+            </div>
+
+            <!-- USA -->
+            <div class="mb-4 p-4 lg:px-64 bg-red-200 rounded">
+              <h3 class="text-sm lg:text-base font-bold"><a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://www.paisleyschooldistrict.com/">Paisley School <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a> | Oregon,
+                Estados Unidos (MAYO
+                2017)
+              </h3>
+              <p class="text-sm lg:text-base">Educación Secundaria Obligatoria</p>
+            </div>
+
+          </section>
+
+          <!-- Experiencia -->
+          <section>
+
+            <h2 class="my-8 text-xl lg:text-2xl font-bold">EXPERIENCIA</h2>
+
+            <!-- Camarero en Aperitoche -->
+            <div class="mb-4 p-4 lg:px-64 bg-gray-100 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Camarero en <a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://www.aperitoche.com/">Aperitoche <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a> (Las Rozas, Madrid)
+              </h3>
+              <p class="text-sm lg:text-base">Funciones en las áreas de barra y sala (marzo-noviembre
+                2023).</p>
+            </div>
+
+            <!-- Roboticlab -->
+            <div class="mb-4 p-4 lg:px-64 bg-gray-200 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Monitor en <a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://www.roboticlab.es/">Roboticlab <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a> (Comunidad de Madrid)
+              </h3>
+              <p class="text-sm lg:text-base">Talleres y otras actividades relacionadas con la
+                robótica y la programación (2022-2023).</p>
+            </div>
+
+            <!-- Primer encargado y jefe de sala en Anubis Shisha Lounge Heron City -->
+            <div class="mb-4 p-4 lg:px-64 bg-gray-300 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Primer encargado en <a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://www.anubiscocteleria.com/">Anubis <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a> Heron City (Las
+                Rozas, Madrid)</h3>
+              <p class="text-sm lg:text-base">Estrategia del manejo de personal (plantilla de seis
+                camareros), gestión
+                administrativa y de seguridad, contabilidad,
+                registro y facturación, control de productos y proveedores (febrero-junio 2021).</p>
+            </div>
+
+            <!-- Camarero en Anubis Shisha Lounge Xanadú -->
+            <div class="mb-4 p-4 lg:px-64 bg-gray-200 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Camarero en <a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://www.anubiscocteleria.com/">Anubis <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a>
+                Xanadú (Arroyomolinos, Madrid)
+              </h3>
+              <p class="text-sm lg:text-base">Funciones en las áreas de sala, barra y cachimbas
+                (enero 2021).
+              </p>
+            </div>
+
+            <!-- Año de estudios en Oregón, EEUU -->
+            <div class="mb-4 p-4 lg:px-64 bg-gray-100 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Camarero en <a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://maps.app.goo.gl/8pxeCAefeTtptkrj7">Pioneer Saloon and
+                  Restaurant <i class="fa-solid fa-up-right-from-square text-sm"></i></a>
+                (Oregón, Estados Unidos)</h3>
+              <p class="text-sm lg:text-base">
+                Funciones en las áreas de sala, barra y limpieza (2016-2017).</p>
+            </div>
+
+            <!-- Realización de un voluntariado en la India -->
+            <div class="mb-4 p-4 lg:px-64 bg-gray-200 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Profesor de inglés con <a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://aipc-pandora.org/">AIPC Pandora <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a> (India)</h3>
+              <p class="text-sm lg:text-base">Profesor de inglés durante un período de dos meses de
+                voluntariado (junio-julio 2014).</p>
+            </div>
+
+            <!-- Organización de eventos juveniles en Torreforum, Torrelodones -->
+            <div class="mb-4 p-4 lg:px-64 bg-gray-300 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Dinamizador en <a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out"
+                  href="https://www.torrelodones.es/juventud">Torreforum <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a> (Torrelodones,
+                Madrid)</h3>
+              <p class="text-sm lg:text-base">Organización de talleres y eventos como dinamizador
+                juvenil (2013-2015).</p>
+            </div>
+
+          </section>
+
+          <!-- Habilidades y conocimientos -->
+          <section>
+
+            <h2 class="my-8 text-xl lg:text-2xl font-bold">HABILIDADES Y CONOCIMIENTOS</h2>
+
+            <!-- Desarrollo Web -->
+            <div class="mb-4 p-4 lg:px-64 bg-red-100 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Técnico Superior en Desarrollo de Aplicaciones Web
+              </h3>
+              <p class="text-sm lg:text-sm">HTML <b>|</b> CSS <b>|</b> JavaScript <b>|</b> Angular
+                <b>|</b> Astro <b>|</b> React <b>|</b> Java <b>|</b> MySQL
+              </p>
+            </div>
+
+            <!-- IES -->
+            <div class="mb-4 p-4 lg:px-64 bg-red-100 rounded">
+              <p class="text-sm lg:text-base">Facilidad para la organización y la
+                resolución
+                de
+                problemas</p>
+            </div>
+
+            <!-- USA -->
+            <div class="mb-4 p-4 lg:px-64 bg-red-200 rounded">
+              <p class="text-sm lg:text-base">Facilidad para la comunicación y el
+                asesoramiento a
+                clientes</p>
+            </div>
+
+          </section>
+
+          <!-- Idiomas -->
+          <section>
+
+            <h2 class="my-8 text-xl lg:text-2xl font-bold">IDIOMAS</h2>
+
+            <!-- Inglés -->
+            <div class="mb-12 p-4 lg:px-64 bg-gray-200 rounded">
+              <h3 class="text-sm lg:text-base font-bold">Inglés</h3>
+              <p class="text-sm lg:text-base"><b>C1 Advanced</b> certificado por <a
+                  class="text-red-600 hover:text-red-500 transition duration-300 ease-in-out font-bold"
+                  href="https://drive.google.com/file/d/1rrBPt55Z9_ioAYV1FgBYAPZkLvnnX5io/view?usp=sharing">Cambridge <i
+                    class="fa-solid fa-up-right-from-square text-sm"></i></a>
+              </p>
+            </div>
+
+          </section>
+
+        </main>
+
+      </div>
+
+      <!-- Descargar CV -->
+      <div class="flex justify-center w-full mt-8 sticky bottom-4 z-40">
+        <a href="https://drive.google.com/uc?export=download&id=1HQkQM2gs3E6eoSSmaCgCAywvkWkjS5QE" title="Descargar CV"
+          class="flex justify-center items-center bg-black rounded-full w-12 h-12 hover:bg-gray-800 agrandar2">
+          <i class="fa-solid fa-file-arrow-down text-white text-xl"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Contenido de fondo3 (AYUDA) -->
+  <div class="flex flex-col justify-center w-screen h-screen fondos fondo3">
+    <div class="h-full flex flex-col justify-center items-center">
+      <p class="m-8 text-center text-white">Este es el portfolio de Marcos Fernández de Salamanca (Sofos), un
+        joven de 22 años de la localidad de Torrelodones, Madrid.</p>
+      <p class="m-8 text-center text-white">Para desplazarse en dispositivos móviles, utilice el botón de la
+        esquina superior izquierda para desplegar el menú.</p>
+      <p class="m-8 text-center text-white">Para desplazarse en escritorios, utilice la rueda de
+        desplazamiento del ratón o pulse los botones del menú superior.</p>
+    </div>
+  </div>
+</div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

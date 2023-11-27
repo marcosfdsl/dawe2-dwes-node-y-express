@@ -1,1 +1,226 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    /* Prevengo copy paste */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: black;
+    /* Esto arregla error de alto de pantalla ("info" aparece desde abajo, entonces ocupa un espacio debajo de "fondo1")*/
+    position: fixed;
+}
+
+/* Scroll contenedorfondos */
+.contenedorfondos {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* Oculta barra scroll */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Fondos */
+.fondos {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    scroll-snap-align: start;
+}
+
+.fondo1 {
+    background-image: url('assets/fotos/fondo1.jpg');
+}
+
+.fondo2 {
+    background-image: url('assets/fotos/fondo2.jpg');
+}
+
+.fondo3 {
+    background-image: url('assets/fotos/fondo3.jpg');
+}
+
+/* Márgenes Rombos Negros */
+.margenrombotop {
+    margin-top: 4px;
+    margin-bottom: -1px;
+    margin-left: 4px;
+    margin-right: -1px;
+}
+
+.margenrombobot {
+    margin-top: -1px;
+    margin-bottom: 4px;
+    margin-left: -1px;
+    margin-right: 4px;
+}
+
+.margenromboleft {
+    margin-top: -1px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    margin-right: -1px;
+}
+
+.margenromboright {
+    margin-top: 4px;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    margin-right: 4px;
+}
+
+/* Rotar y des-rotar rombos e iconos" */
+.rotar {
+    transform: rotate(45deg);
+}
+
+.desrotar {
+    transform: rotate(-45deg);
+}
+
+/* Hover azul rombos negros */
+.hoverazul {
+    transition: background-color 0.3s;
+}
+
+/* Color fondo azul info */
+.fondoazul {
+    background-color: #0d91c93a;
+}
+
+/* Azul links */
+.azul {
+    color: #0778a8;
+    transition: color 0.3s;
+}
+
+/* Hover azul links */
+.azul:hover {
+    color: #055f86;
+}
+
+/* Hover agrandar iconos rombos */
+.agrandar {
+    transition: transform ease 0.5s;
+}
+
+.rotar.agrandar:hover {
+    transform: rotate(45deg) scale(1.2);
+}
+
+.desrotar.agrandar:hover {
+    transform: rotate(-45deg) scale(1.2);
+}
+
+/* Hover agrandar botón descarga CV */
+.agrandar2 {
+    transition: all ease 0.5s;
+}
+
+.agrandar2:hover {
+    transform: scale(1.1);
+}
+
+/* Hover agrandar foto CV */
+.agrandar3 {
+    transition: all ease 0.5s;
+}
+
+.agrandar3:hover {
+    transform: scale(1.05);
+}
+
+/* Flecha transparencia */
+.transparencia {
+    color: rgba(255, 255, 255, 0.452)
+}
+
+/* Girar Flecha */
+.animaciongirarflecha {
+    transition: transform 0.5s;
+}
+
+.girarflecha {
+    transform: rotate(180deg);
+}
+
+/* Subrayados menú */
+@keyframes fadeInUnderline {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.subrayado {
+    position: relative;
+    display: inline-block;
+}
+
+.subrayado::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.436);
+    transform-origin: left center;
+    animation: fadeInUnderline 0.8s forwards;
+}
+
+/* Video YouTube */
+.videocontenedor {
+    position: relative;
+    width: 100%;
+    padding-top: 60%;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive PC */
+@media (min-width: 1024px) {
+
+    /* Oculta botón menú móvil en PC */
+    .esconder {
+        display: none;
+    }
+
+    /* Hace fondo menú transparente */
+    #menu {
+        background: transparent;
+    }
+
+    /* Video YouTube PC */
+    .videocontenedor {
+        width: 80%;
+        padding-top: 40%;
+    }
+}
+
+/* Responsive móvil */
+@media (max-width: 1024px) {
+    .letra {
+        font-size: 14px;
+    }
+    
+    .letra2 {
+        font-size: 11px;
+    }
+}
