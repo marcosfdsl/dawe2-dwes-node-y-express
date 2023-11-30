@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Abrir info en fondo1 al pulsar "btnmusica", "btnhosteleria" o "btngenealogia"
+    // Abrir info en fondo1 al pulsar "btnhistorianode", "btnintroduccionnode" o "btnactualidadnode"
     const mostrarinfo = (sectionId) => {
         let section = document.getElementById(sectionId);
         section.style.opacity = "1";
@@ -86,9 +86,12 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const btnToSectionMapping = {
-        "btnmusica": "infomusica",
-        "btnhosteleria": "infohosteleria",
-        "btngenealogia": "infogenealogia"
+        "btnintroduccionnode": "infointroduccionnode",
+        "btnhistorianode": "infohistorianode",
+        "btnactualidadnode": "infoactualidadnode",
+        "btnintroduccionexpress": "infointroduccionexpress",
+        "btnhistoriaexpress": "infohistoriaexpress",
+        "btnactualidadexpress": "infoactualidadexpress"
     };
 
     for (const [btnId, sectionId] of Object.entries(btnToSectionMapping)) {
@@ -101,17 +104,23 @@ document.addEventListener('DOMContentLoaded', function () {
         section.style.transform = "translateY(100%)";
     };
 
-    ["infomusica", "infohosteleria", "infogenealogia", "boton", "btnhome", "btnabout", "btnhelp"].forEach(btnId => {
+    ["infohistorianode", "infointroduccionnode", "infoactualidadnode", "infohistoriaexpress", "infointroduccionexpress", "infoactualidadexpress", "boton", "btnhome", "btnabout", "btnhelp"].forEach(btnId => {
         document.getElementById(btnId).addEventListener("click", () => {
-            esconderinfo('infomusica');
-            esconderinfo('infohosteleria');
-            esconderinfo('infogenealogia');
+            esconderinfo('infohistorianode');
+            esconderinfo('infointroduccionnode');
+            esconderinfo('infoactualidadnode');
+            esconderinfo('infohistoriaexpress');
+            esconderinfo('infointroduccionexpress');
+            esconderinfo('infoactualidadexpress');
 
             // Reinicia scroll info
             setTimeout(() => {
-                scrollmusica.scrollTo(0, 0);
-                scrollhosteleria.scrollTo(0, 0);
-                scrollgenealogia.scrollTo(0, 0);
+                scrollhistorianode.scrollTo(0, 0);
+                scrollintroduccionnode.scrollTo(0, 0);
+                scrollactualidadnode.scrollTo(0, 0);
+                scrollhistoriaexpress.scrollTo(0, 0);
+                scrollintroduccionexpress.scrollTo(0, 0);
+                scrollactualidadexpress.scrollTo(0, 0);
             }, 200);
         });
     });
@@ -131,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
     contenedorfondos.addEventListener('scroll', function () {
         let scrollTimeout;
         clearTimeout(scrollTimeout);
-        const buttonIDs = ['btnhome', 'btnabout', 'btnhelp', 'btnmusica', 'btnhosteleria', 'btngenealogia'];
+        const buttonIDs = ['btnhome', 'btnabout', 'btnhelp', 'btnhistorianode', 'btnintroduccionnode', 'btnactualidadnode', 'btnhistoriaexpress', 'btnintroduccionexpress', 'btnactualidadexpress'];
         buttonIDs.forEach(id => {
             const button = document.getElementById(id);
             if (button) button.setAttribute('disabled', 'disabled');
@@ -156,9 +165,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById("btnabout").classList.remove("subrayado");
                 document.getElementById("btnhelp").classList.remove("subrayado");
                 // Reinicia scrolls
-                scrollmusica.scrollTo(0, 0);
-                scrollhosteleria.scrollTo(0, 0);
-                scrollgenealogia.scrollTo(0, 0);
+                scrollhistorianode.scrollTo(0, 0);
+                scrollintroduccionnode.scrollTo(0, 0);
+                scrollactualidadnode.scrollTo(0, 0);
+                scrollhistoriaexpress.scrollTo(0, 0);
+                scrollintroduccionexpress.scrollTo(0, 0);
+                scrollactualidadexpress.scrollTo(0, 0);
             }
             // Si se está en fondo2
             else if (estaCerca(document.querySelector('.fondo2'))) {
@@ -184,9 +196,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById("btnabout").classList.remove("subrayado");
                 document.getElementById("btnhelp").classList.add("subrayado");
                 // Reinicia scrolls
-                scrollmusica.scrollTo(0, 0);
-                scrollhosteleria.scrollTo(0, 0);
-                scrollgenealogia.scrollTo(0, 0);
+                scrollhistorianode.scrollTo(0, 0);
+                scrollintroduccionnode.scrollTo(0, 0);
+                scrollactualidadnode.scrollTo(0, 0);
+                scrollhistoriaexpress.scrollTo(0, 0);
+                scrollintroduccionexpress.scrollTo(0, 0);
+                scrollactualidadexpress.scrollTo(0, 0);
             }
         }, 10);
     });
