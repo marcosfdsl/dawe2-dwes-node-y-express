@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let section = document.getElementById(sectionId);
         section.style.opacity = "1";
         section.style.transform = "translateY(0)";
-        alert("tuu");
     };
 
     const btnToSectionMapping = {
@@ -95,6 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
     for (const [btnId, sectionId] of Object.entries(btnToSectionMapping)) {
         document.getElementById(btnId).addEventListener("click", () => mostrarinfo(sectionId));
     }
+
+    const esconderinfo = (sectionId) => {
+        let section = document.getElementById(sectionId);
+        section.style.opacity = "0";
+        section.style.transform = "translateY(100%)";
+    };
 
     ["infomusica", "infohosteleria", "infogenealogia", "boton", "btnhome", "btnabout", "btnhelp"].forEach(btnId => {
         document.getElementById(btnId).addEventListener("click", () => {
