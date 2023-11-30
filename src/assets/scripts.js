@@ -125,16 +125,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Hover azul rombos fondo1
-    var elementos = document.querySelectorAll('.hoverazul');
+    // Hover verde
+    var elementos = document.querySelectorAll('.hoververde');
     elementos.forEach(function (elemento) {
         elemento.addEventListener('mouseenter', function () {
-            this.style.backgroundColor = '#001a29';
+            this.style.backgroundColor = '#0C2B00';
         });
         elemento.addEventListener('mouseleave', function () {
             this.style.backgroundColor = '';
         });
     });
+
+    // Hover amarillo
+    var elementos = document.querySelectorAll('.hoveramarillo');
+    elementos.forEach(function (elemento) {
+        elemento.addEventListener('mouseenter', function () {
+            this.style.backgroundColor = '#252300';
+        });
+        elemento.addEventListener('mouseleave', function () {
+            this.style.backgroundColor = '';
+        });
+    });
+
 
     // Mientras se hace scroll
     contenedorfondos.addEventListener('scroll', function () {
