@@ -37,6 +37,11 @@ body {
     background-image: url('assets/fotos/fondo1.jpg');
 }
 
+
+.fondo2 {
+    background-image: url('assets/fotos/fondo2.jpg');
+}
+
 .fondo3 {
     background-image: url('assets/fotos/fondo3.jpg');
 }
@@ -69,15 +74,6 @@ body {
 /* Hover azul links */
 .azul:hover {
     color: #058650;
-}
-
-/* Hover agrandar iconos */
-.agrandar {
-    transition: transform ease 0.5s;
-}
-
-.agrandar:hover {
-    transform: scale(1.05);
 }
 
 /* Hover agrandar botón descarga CV */
