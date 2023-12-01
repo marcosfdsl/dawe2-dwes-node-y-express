@@ -9,5 +9,4 @@ import { CommonModule } from '@angular/common';
   styleUrl: './node.component.css'
 })
 export class NodeComponent {
-
 }
