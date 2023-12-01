@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+        console.log(`Servidor escuchando en el puerto ${port}`);
+    });
+
+
     // Dropdown oculto (menú para móvil)
     const menu = document.querySelector("#menu");
     const toggleMenu = (event) => {
