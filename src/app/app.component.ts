@@ -28,6 +28,40 @@ export class AppComponent implements OnInit {
             document.getElementById('btnhome').classList.add('subrayado');
             document.getElementById('btnabout').classList.remove('subrayado');
             document.getElementById('btnhelp').classList.remove('subrayado');
+
+            const mostrarinfo = (sectionId) => {
+              let section = document.getElementById(sectionId);
+              section.style.opacity = "1";
+              section.style.transform = "translateY(0)";
+            };
+
+            const btnToSectionMapping = {
+              "btnhistorianode": "infohistorianode"
+            };
+
+            for (const [btnId, sectionId] of Object.entries(btnToSectionMapping)) {
+              document.getElementById(btnId).addEventListener("click", () => mostrarinfo(sectionId));
+            }
+
+            const esconderinfo = (sectionId) => {
+              let section = document.getElementById(sectionId);
+              section.style.opacity = "0";
+              section.style.transform = "translateY(100%)";
+            };
+
+            ["infohistorianode", "boton", "btnhome", "btnabout", "btnhelp"].forEach(btnId => {
+              document.getElementById(btnId).addEventListener("click", () => {
+                esconderinfo('infohistorianode');
+
+                // // Reinicia scroll info
+                // setTimeout(() => {
+                //   scrollhistorianode.scrollTo(0, 0);
+                //   scrollintroduccionnode.scrollTo(0, 0);
+                //   scrollactualidadnode.scrollTo(0, 0);
+                // }, 200);
+              });
+            });
+
           } else if (currentRoute === '/node') {
             document.getElementById('btnhome').classList.remove('subrayado');
             document.getElementById('btnabout').classList.add('subrayado');

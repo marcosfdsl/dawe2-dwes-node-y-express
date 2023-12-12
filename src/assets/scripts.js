@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector("#boton").addEventListener("click", toggleMenu);
     document.addEventListener("click", () => menu.classList.add("hidden"));
 
+    // Hover azul
+    var elementos = document.querySelectorAll('.hoverazul');
+    elementos.forEach(function (elemento) {
+        elemento.addEventListener('mouseenter', function () {
+            this.style.backgroundColor = '#002B1D';
+        });
+        elemento.addEventListener('mouseleave', function () {
+            this.style.backgroundColor = '';
+        });
+    });
+
     // Hover verde
     var elementos = document.querySelectorAll('.hoververde');
     elementos.forEach(function (elemento) {

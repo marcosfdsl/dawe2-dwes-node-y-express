@@ -46,13 +46,8 @@ body {
     background-image: url('assets/fotos/fondo3.jpg');
 }
 
-/* Hover verde */
-.hoververde {
-    transition: background-color 0.3s;
-}
-
-/* Hover amarillo */
-.hoveramarillo {
+/* Hover colores */
+.hoveramarillo, .hoververde, .hoverazul {
     transition: background-color 0.3s;
 }
 
@@ -64,6 +59,11 @@ body {
 .fondoamarillo {
     background-color: rgba(204, 201, 0, 0.227);
 }
+
+.fondoazul {
+    background-color: rgba(0, 204, 160, 0.227);
+}
+
 
 /* Azul links */
 .azul {
